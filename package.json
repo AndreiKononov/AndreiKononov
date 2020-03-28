@@ -1,7 +1,7 @@
 {
-    "name": "helloapp",
+    "name": "purchaseapp",
     "version": "1.0.0",
-    "description": "First Angular 9 Project",
+    "description": "Second Angular 9 Project",
     "author": "Andrei Kononov",
     "scripts": {
         "ng": "ng",
