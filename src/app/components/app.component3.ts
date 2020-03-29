@@ -10,5 +10,5 @@ import { Component} from '@angular/core';
                </table>`
 })
 export class AppComponent3{
-    colspan = 3;
+    colspan: number = 3;
 }

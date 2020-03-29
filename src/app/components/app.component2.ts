@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     template: `<input type="text" [value]="name" />`
 })
 export class AppComponent2 {
-    name = "Tom";
+    name: string = "Andrei";
 }
