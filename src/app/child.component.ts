@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
     `,
 })
 export class ChildComponent {
-    @Input() userName: string;
-    @Input() userAge: number;
+    @Input() userName: string; // The decorator @Input() defines property "userName" as a input property
+    @Input() userAge: number; // The decorator @Input() defines property "userAge" as a input property
 }
