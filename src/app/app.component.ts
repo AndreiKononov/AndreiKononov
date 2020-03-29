@@ -3,9 +3,9 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'my-app',
     template: `
-        <child-comp></child-comp>
-        <child-comp><h1>Display me</h1></child-comp> <!-- content of <h1> doesn't display (it displays <child-comp> template) -->
-        <p>Hello {{name}}</p>        
+        <child-comp>
+            <h2>Welcome {{name}}!</h2> <!-- due to <ng-content> in template of child component -->
+        </child-comp>
     `,
     styles: [`
         h2, p {
@@ -15,5 +15,5 @@ import { Component } from "@angular/core";
 })
 
 export class AppComponent {
-    name: string = 'Apanas';
+    name: string = 'Andrei';
 }
