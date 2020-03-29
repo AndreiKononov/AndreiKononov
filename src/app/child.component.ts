@@ -8,6 +8,18 @@ import { Component, Input } from '@angular/core';
     `,
 })
 export class ChildComponent {
-    @Input() userName: string; // The decorator @Input() defines property "userName" as a input property
-    @Input() userAge: number; // The decorator @Input() defines property "userAge" as a input property
+    @Input() userName: string;      // The decorator @Input() defines property "userName" as a input property
+    _userAge: number;
+    @Input()                        // The decorator @Input() defines setter "userAge()" to check/modify a value which get from parent component
+        set userAge(age: number) {
+            if (age < 0)
+                this._userAge = 0;
+            else if (age > 100)
+                this._userAge = 100;
+            else
+                this._userAge = age;
+        }
+        get userAge() {
+            return this._userAge;
+        }
 }
