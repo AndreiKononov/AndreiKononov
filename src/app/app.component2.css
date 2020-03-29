@@ -1,0 +1,8 @@
+h1.red{
+    font-size:31px;
+    color: red;
+}
+:host {
+  font-family: Verdana;
+  color: #555;
+}
