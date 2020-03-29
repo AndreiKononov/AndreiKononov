@@ -7,13 +7,14 @@ import { AppComponent3 } from "./components/app.component3";
 import { AppComponent4 } from "./components/app.component4";
 import { AppComponent5 } from "./components/app.component5";
 import { AppComponent6 } from "./components/app.component6";
+import { AppComponent7 } from "./components/app.component7";
 
 @NgModule({
     imports:        [ BrowserModule, FormsModule ], // set of another modules are used in current module
     // set of view classes of current module (There are three type of view classes in Angular: components, directives, pipes)
-    declarations:   [ AppComponent, AppComponent2, AppComponent3, AppComponent4, AppComponent5, AppComponent6 ],
+    declarations:   [ AppComponent, AppComponent2, AppComponent3, AppComponent4, AppComponent5, AppComponent6, AppComponent7 ],
     // root component(s) (run(s) by default when this app starts running)
-    bootstrap:      [ AppComponent, AppComponent2, AppComponent3, AppComponent4, AppComponent5, AppComponent6 ],
+    bootstrap:      [ AppComponent, AppComponent2, AppComponent3, AppComponent4, AppComponent5, AppComponent6, AppComponent7 ],
     exports: [], // set of view classes which will be use
     providers: [] // set of classes which create services for current module
 })
