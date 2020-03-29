@@ -1,7 +1,7 @@
 {
-    "name": "helloapp",
+    "name": "binding",
     "version": "1.0.0",
-    "description": "First Angular 9 Project",
+    "description": "Data Binding in Angular 9",
     "author": "Andrei Kononov",
     "scripts": {
         "ng": "ng",
