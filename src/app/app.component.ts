@@ -3,17 +3,12 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'my-app',
     template: `
-        <child-comp>
-            <h2>Welcome {{name}}!</h2> <!-- due to <ng-content> in template of child component -->
-        </child-comp>
+        <child-comp [userName]="name" [userAge]="age"></child-comp> <!-- binding of "name" variable/property(parent component) w/ "userName" variable/property(child component). The same for "age" -->
+        <input type="text" [(ngModel)]="name" />
     `,
-    styles: [`
-        h2, p {
-            color: #333;
-        }    
-    `],
 })
 
 export class AppComponent {
     name: string = 'Andrei';
+    age: number = 35;
 }

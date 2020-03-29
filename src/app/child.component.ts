@@ -1,17 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'child-comp',
     template: `
-        <ng-content></ng-content> <!-- it allows a parent component includes html-code into child component -->
-        <h2>Welcome {{name}}</h2>
+        <p>User name: {{userName}}</p>
+        <p>User age: {{userAge}}</p>
     `,
-    styles: [`
-        h2, p {
-            color: navy;
-        }
-    `]
 })
 export class ChildComponent {
-    name: string = 'Apanas';
+    @Input() userName: string;
+    @Input() userAge: number;
 }
