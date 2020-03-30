@@ -1,25 +1,23 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
     selector: 'my-app',
     template: `
-        <p>Hello {{name}}!</p>
-    `
+        <child-comp [name]="name"></child-comp>
+        <input type="text" [(ngModel)]="name" />
+        <input type="number" [(ngModel)]="age" />`
 })
+export class AppComponent implements OnChanges {
+    name:string = "Andrei";
+    age:number = 35;
 
-export class AppComponent implements OnInit, OnDestroy {
-    name: string = 'Andrei';
-
-    constructor() {
-        this.log(`constructor`);
-    }
-
-    ngOnInit() {
-        this.log(`onInit`);
-    }
-
-    ngOnDestroy() {
-        this.log(`onDestroy`);
+    ngOnChanges(changes: SimpleChanges) {
+        for (let propName in changes) {
+            let chng = changes[propName];
+            let cur  = JSON.stringify(chng.currentValue);
+            let prev = JSON.stringify(chng.previousValue);
+            this.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+        }
     }
 
     private log(msg: string) {
