@@ -3,17 +3,14 @@ import { Component } from "@angular/core";
 @Component({
     selector: 'my-app',
     template: `
-        <child-comp>
-            <h2>Welcome {{name}}!</h2> <!-- due to <ng-content> in template of child component -->
-        </child-comp>
+        <h2>Clicks count = {{clicks}}</h2>
+        <child-comp (onChanged)="onChanged($event)"></child-comp>
     `,
-    styles: [`
-        h2, p {
-            color: #333;
-        }    
-    `],
 })
 
 export class AppComponent {
-    name: string = 'Andrei';
+    clicks: number = 0;
+    onChanged(incresed: any) {
+        incresed == true ? this.clicks++ : this.clicks--;
+    }
 }
