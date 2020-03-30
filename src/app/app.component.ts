@@ -3,13 +3,18 @@ import { Component, OnChanges, SimpleChanges} from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `
-        <child-comp [name]="name"></child-comp>
+<!--        <child-comp [name]="name"></child-comp>-->
+<!--        <input type="text" [(ngModel)]="name" />-->
+<!--        <input type="number" [(ngModel)]="age" />-->
+        <hr>
+        <child-comp2 [name]="name"></child-comp2>
         <input type="text" [(ngModel)]="name" />
-        <input type="number" [(ngModel)]="age" />`
+    `
 })
 export class AppComponent implements OnChanges {
-    name:string = "Andrei";
-    age:number = 35;
+
+    name: string = "Andrei";
+    age: number = 35;
 
     ngOnChanges(changes: SimpleChanges) {
         for (let propName in changes) {
