@@ -1,22 +1,22 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'my-app',
     template: `
-        <p #userName>{{name}}</p> <!-- initialisation of template variable using #. We can use this variable inside template only -->
-        <p>{{userName.textContent}}</p>
-        <input type="text" [(ngModel)]="name" placeholder="name">
-        <hr>
-        <child-comp #counter></child-comp>
-        <button (click)="counter.increment()">+</button> <!-- using in template only -->
-        <button (click)="counter.decrement()">-</button>
+        <p #nameText>{{name}}</p>
+        <p>{{nameText.textContent}}</p>
+        <button (click)="change()">Change</button>
     `
 })
-
 export class AppComponent {
-    name: string = 'Andrei';
 
-    // increment() { this.counter++; }   variable "counter" doesn't exist in component
-    // decrement() { this.counter--; }  -- // -- // --
+    @ViewChild("nameText", {static: false})
+    nameParagraph: ElementRef; // property "nameParagraph" is linked with "nameText" variable. Type ElementRef uses for a link to  html-elements
 
+    name: string = "Andrei";
+
+    change() {
+        console.log(this.nameParagraph.nativeElement.textContent);
+        this.nameParagraph.nativeElement.textContent = "hell";
+    }
 }
