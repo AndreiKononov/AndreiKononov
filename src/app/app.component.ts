@@ -1,12 +1,28 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
     selector: 'my-app',
-    template: `<label>Insert your name:   </label>
-                  <input [(ngModel)]="name" placeholder="name">
-                  <h1>Welcome {{name}}!</h1>`
+    template: `
+        <p>Hello {{name}}!</p>
+    `
 })
 
-export class AppComponent {
-    name ='';
+export class AppComponent implements OnInit, OnDestroy {
+    name: string = 'Andrei';
+
+    constructor() {
+        this.log(`constructor`);
+    }
+
+    ngOnInit() {
+        this.log(`onInit`);
+    }
+
+    ngOnDestroy() {
+        this.log(`onDestroy`);
+    }
+
+    private log(msg: string) {
+        console.log(msg);
+    }
 }
