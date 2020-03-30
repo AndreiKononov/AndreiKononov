@@ -1,22 +1,18 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from '@angular/core';
+import { ChildComponent} from './child.component';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <p #userName>{{name}}</p> <!-- initialisation of template variable using #. We can use this variable inside template only -->
-        <p>{{userName.textContent}}</p>
-        <input type="text" [(ngModel)]="name" placeholder="name">
-        <hr>
-        <child-comp #counter></child-comp>
-        <button (click)="counter.increment()">+</button> <!-- using in template only -->
-        <button (click)="counter.decrement()">-</button>
-    `
+    template: `<child-comp></child-comp>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>`
 })
 
 export class AppComponent {
-    name: string = 'Andrei';
 
-    // increment() { this.counter++; }   variable "counter" doesn't exist in component
-    // decrement() { this.counter--; }  -- // -- // --
+    @ViewChild(ChildComponent, {static: false}) // first parameter is selector of element which should be watched, second parameter is static
+    private counterComponent: ChildComponent;
 
+    increment() { this.counterComponent.increment(); }
+    decrement() { this.counterComponent.decrement(); }
 }
