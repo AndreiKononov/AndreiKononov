@@ -1,7 +1,7 @@
 {
-    "name": "helloapp",
+    "name": "modules",
     "version": "1.0.0",
-    "description": "First Angular 9 Project",
+    "description": "Modules in Angular 9",
     "author": "Andrei Kononov",
     "scripts": {
         "ng": "ng",
